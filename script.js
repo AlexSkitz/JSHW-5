@@ -4,7 +4,7 @@
 //элементы которого будут преобразованы в данный формат: <Столица> - это <Страна>.
 //Доступ к объекту может быть любым (через контекст, напрямую и т.д.)
 //Можно использовать Object.entries метод )
-var citiesAndCountries = {
+const citiesAndCountries = {
     'Киев': 'Украина',
     'Нью-Йорк': 'США',
     'Амстердам': 'Нидерланды',
@@ -14,12 +14,13 @@ var citiesAndCountries = {
     'Вена': 'Австрия',
 };
 
-function getCity (citiesAndCountries, key, value)
+let getCity = [];
+for(const [key, value] of Object.entries(citiesAndCountries))
+{
+    getCity.push(`${key} - это ${value}`)
+}
 
 
-
-
-var result = getCity();
 
 
 // HW 2
