@@ -61,17 +61,17 @@ getNameOfDay('ru', 5);
 // прототип(protoObj) для currentObj.То есть после вызова функции
 // мы должны получить результат:
 
-const person = {
-    name: 'Vlad'
+var person = {
+    name: 'Vlad',
+    sex: 'male' ,
 };
-
-
-const person1 = {
-    age: 1
+var person1 = {
+    age: 19
 };
 
 function setProto(currentObj, protoObj) {
-    
+    protoObj.__proto__ = currentObj;
+    return protoObj;
 }
 
 setProto(person1, person);
