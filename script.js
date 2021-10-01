@@ -20,9 +20,6 @@ for(const [key, value] of Object.entries(citiesAndCountries))
     getCity.push(`${key} - это ${value}`)
 }
 
-
-
-
 // HW 2
 //Cоздать объект с названиями дней недели.
 //Где ключами будут ru и en, a значением свойства ru будет массив 
@@ -43,9 +40,15 @@ const namesOfDays = {
     ru: ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'],
     en: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
 };
-
+let arrToUse = [];
 function getNameOfDay(lang, datNumber) {
-    
+    if (lang == 'en'){
+        arrToUse = namesOfDays.en;
+    } else {
+        arrToUse = namesOfDays.ru;
+    };
+    let result = arrToUse[datNumber - 1]
+    return result; 
 };
 
 getNameOfDay('en', 3); 
